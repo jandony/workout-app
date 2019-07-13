@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="UTF-8">
-  <title>Express Library</title>
+  <title>Workout Library</title>
 
   <!-- Bootstrap CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -20,51 +20,51 @@
   <div class="container">
 
     <div class="jumbotron">
-      <h1>Express Library</h1>
-      <h3>Books Books Books!</h3>
+      <h1>Workout Library</h1>
+      <h3>Lift Lift Lift!</h3>
       <hr>
       <a href="/" class="btn btn-danger btn-lg">
-        <span class="fa fa-eye"></span> Search Books</a>
+        <span class="fa fa-eye"></span> Search Workouts</a>
       <a href="/add" class="btn btn-danger btn-lg">
-        <span class="fa fa-plus"></span> Add New Book</a>
+        <span class="fa fa-plus"></span> Add New Workout</a>
       <a href="/all" class="btn btn-danger btn-lg">
-        <span class="fa fa-th-list"></span> All Books</a>
+        <span class="fa fa-th-list"></span> All Workouts</a>
       <a href="/long" class="btn btn-danger btn-lg">
-        <span class="fa fa-th-list"></span> Long Books</a>
+        <span class="fa fa-th-list"></span> Long Workouts</a>
       <a href="/short" class="btn btn-danger btn-lg">
-        <span class="fa fa-th-list"></span> Short Books</a>
+        <span class="fa fa-th-list"></span> Short Workouts</a>
     </div>
 
     <div class="row">
       <div class="col-lg-12">
         <div class="card">
           <div class="card-header">
-            Add Book
+            Add Workout
           </div>
 
           <div class="card-body">
             <form action="" method="POST" role="form">
               <div class="form-group">
-                <label for="">Title</label>
-                <input type="text" class="form-control" id="title" placeholder="">
+                <label for="">Your name</label>
+                <input type="text" class="form-control" id="name" placeholder="">
               </div>
               <div class="form-group">
-                <label for="">Author</label>
-                <input type="text" class="form-control" id="author" placeholder="">
+                <label for="">Workout Type</label>
+                <input type="text" class="form-control" id="type" placeholder="">
               </div>
               <div class="form-group">
-                <label for="">Genre</label>
-                <input type="text" class="form-control" id="genre" placeholder="">
+                <label for="">WOD Name</label>
+                <input type="text" class="form-control" id="wod_name" placeholder="">
               </div>
               <div class="form-group">
-                <label for="">Pages</label>
-                <input type="number" class="form-control" id="pages" placeholder="">
+                <label for="">Workout Duration</label>
+                <input type="number" class="form-control" id="duration" placeholder="">
               </div>
             </form>
             <br>
             <div class="text-right">
               <button type="submit" class="btn btn-primary btn-md" id="add-btn">
-                <span class="fa fa-book"></span> Add a book</button>
+                <span class="fa fa-book"></span> Add a Workout</button>
             </div>
           </div>
 

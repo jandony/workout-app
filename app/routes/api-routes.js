@@ -4,45 +4,46 @@
 
 // Dependencies
 // =============================================================
-var Book = require("../models/book.js");
+var Workout = require("../models/workout.js");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
+  
   // Get all books
   app.get("/api/all", function(req, res) {
-    Book.findAll({}).then(function(results) {
+    Workout.findAll({}).then(function(results) {
       res.json(results);
     });
   });
 
-  // Get a specific book
-  app.get("/api/:book", function(req, res) {
-    Book.findAll({
+  // Get all workouts of a specific athlete name
+  app.get("/api/:name", function(req, res) {
+    Workout.findAll({
       where: {
-        title: req.params.book
+        name: req.params.name
       }
     }).then(function(results) {
       res.json(results);
     });
   });
 
-  // Get all books of a specific genre
-  app.get("/api/genre/:genre", function(req, res) {
-    Book.findAll({
+  // Get all books from a specific workout type
+  app.get("/api/type/:type", function(req, res) {
+    Workout.findAll({
       where: {
-        genre: req.params.genre
+        type: req.params.type
       }
     }).then(function(results) {
       res.json(results);
     });
   });
 
-  // Get all books from a specific author
-  app.get("/api/author/:author", function(req, res) {
-    Book.findAll({
+  // Get a specific workout
+  app.get("/api/wod/:wod", function(req, res) {
+    Workout.findAll({
       where: {
-        author: req.params.author
+        wod_name: req.params.wod
       }
     }).then(function(results) {
       res.json(results);
@@ -50,28 +51,28 @@ module.exports = function(app) {
   });
 
   // Get all "long" books (books 150 pages or more)
-  app.get("/api/books/long", function(req, res) {
-    Book.findAll({
+  app.get("/api/workouts/long", function(req, res) {
+    Workout.findAll({
       where: {
-        pages: {
+        duration: {
           $gte: 150
         }
       },
-      order: [["pages", "DESC"]]
+      order: [["duration", "DESC"]]
     }).then(function(results) {
       res.json(results);
     });
   });
 
   // Get all "short" books (books 150 pages or less)
-  app.get("/api/books/short", function(req, res) {
-    Book.findAll({
+  app.get("/api/workouts/short", function(req, res) {
+    Workout.findAll({
       where: {
-        pages: {
+        duration: {
           $lte: 150
         }
       },
-      order: [["pages", "ASC"]]
+      order: [["duration", "ASC"]]
     }).then(function(results) {
       res.json(results);
     });
@@ -79,13 +80,13 @@ module.exports = function(app) {
 
   // Add a book
   app.post("/api/new", function(req, res) {
-    console.log("Book Data:");
+    console.log("Workout Data:");
     console.log(req.body);
-    Book.create({
-      title: req.body.title,
-      author: req.body.author,
-      genre: req.body.genre,
-      pages: req.body.pages
+    Workout.create({
+      name: req.body.name,
+      type: req.body.type,
+      wod_name: req.body.wod_name,
+      duration: req.body.duration
     }).then(function(results) {
       res.json(results);
     });
@@ -95,7 +96,7 @@ module.exports = function(app) {
   app.delete("/api/book/:id", function(req, res) {
     console.log("Book ID:");
     console.log(req.params.id);
-    Book.destroy({
+    Workout.destroy({
       where: {
         id: req.params.id
       }

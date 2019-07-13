@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="UTF-8">
-  <title>Express Library</title>
+  <title>Workout Library</title>
 
   <!-- Bootstrap CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -20,30 +20,37 @@
   <div class="container">
 
     <div class="jumbotron">
-      <h1>Express Library</h1>
-      <h3>Books Books Books!</h3>
+      <h1>Workout Library</h1>
+      <h3>Lift Lift Lift!</h3>
       <hr>
       <a href="/" class="btn btn-danger btn-lg">
-        <span class="fa fa-eye"></span> Search Books</a>
+        <span class="fa fa-eye"></span> Search Workouts</a>
       <a href="/add" class="btn btn-danger btn-lg">
-        <span class="fa fa-plus"></span> Add New Book</a>
+        <span class="fa fa-plus"></span> Add New Workout</a>
       <a href="/all" class="btn btn-danger btn-lg">
-        <span class="fa fa-th-list"></span> All Books</a>
+        <span class="fa fa-th-list"></span> All Workouts</a>
       <a href="/long" class="btn btn-danger btn-lg">
-        <span class="fa fa-th-list"></span> Long Books</a>
+        <span class="fa fa-th-list"></span> Long Workouts</a>
       <a href="/short" class="btn btn-danger btn-lg">
-        <span class="fa fa-th-list"></span> Short Books</a>
+        <span class="fa fa-th-list"></span> Short Workouts</a>
     </div>
+
+    <div class="row">
+        <div id="workout-table" class="col-lg-12"></div>
+    </div>
+
+      <hr>
+
     <div class="row">
 
       <div class="col-lg-12">
 
         <div class="card mb-4">
           <div class="card-header">
-            Book Search
+            Athlete Name Search
           </div>
           <div class="card-body">
-            <input type="text" id="book-search" class="form-control">
+            <input type="text" id="name-search" class="form-control">
             <br>
             <div class="text-right">
               <button class="btn btn-primary btn-md" id="search-btn">
@@ -54,13 +61,13 @@
 
         <div class="card mb-4">
           <div class="card-header">
-            Author Search
+            Workout Type Search
           </div>
           <div class="card-body">
-            <input type="text" id="author-search" class="form-control">
+            <input type="text" id="type-search" class="form-control">
             <br>
             <div class="text-right">
-              <button class="btn btn-primary btn-md" id="author-search-btn">
+              <button class="btn btn-primary btn-md" id="type-search-btn">
                 <span class="fa fa-search"></span> Search</button>
             </div>
           </div>
@@ -68,13 +75,13 @@
 
         <div class="card mb-4">
           <div class="card-header">
-            Genre Search
+            WOD Search
           </div>
           <div class="card-body">
-            <input type="text" id="genre-search" class="form-control">
+            <input type="text" id="wod-search" class="form-control">
             <br>
             <div class="text-right">
-              <button class="btn btn-primary btn-md" id="genre-search-btn">
+              <button class="btn btn-primary btn-md" id="wod-search-btn">
                 <span class="fa fa-search"></span> Search</button>
             </div>
           </div>
@@ -82,19 +89,19 @@
 
         <div class="card mb-4">
           <div class="card-header">
-            Book Search Results
+            Workout Search Results
           </div>
           <div class="card-body">
             <div class="well" id="stats">
-              <h2 id="title">Books:</h2>
+              <h2 id="name">Athlete: </h2>
               <div>
                 <h6>
-                  <strong>Written by </strong>
-                  <span id="author"></span>
+                  <strong>Workout Type: </strong>
+                  <span id="type"></span>
                 </h6>
                 <h6>
-                  <strong>Genre:</strong>
-                  <span id="genre"></span>
+                  <strong>WOD Name: </strong>
+                  <span id="wod_name"></span>
                 </h6>
               </div>
             </div>

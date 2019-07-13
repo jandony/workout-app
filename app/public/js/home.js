@@ -122,7 +122,7 @@ $.get("/api/all", function (data) {
     $("#workout-table").append(table);
 });
 
-{/* <table class='table table-sm table-hover'>
+/* <table class='table table-sm table-hover'>
   <thead><tr><th scope='col'>ID</th><th scope='col'>Name</th><th scope='col'>Type</th><th scope='col'>WOD Name</th><th scope='col'>Duration</th></tr></thead>
   <tbody>
     <tr>
@@ -143,4 +143,4 @@ $.get("/api/all", function (data) {
       <td>@twitter</td>
     </tr>
   </tbody>
-</table> */}
+</table> */
