@@ -41,7 +41,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    Author_id: {
+    Athlete_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
