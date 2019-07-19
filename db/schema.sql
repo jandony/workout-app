@@ -3,5 +3,5 @@ CREATE DATABASE workout_library;
 
 USE workout_library;
 
-SELECT * FROM workout_library.Athletes;
-SELECT * FROM workout_library.Weights;
+SELECT * FROM contest_db.Users;
+SELECT * FROM contest_db.User_Weights;
